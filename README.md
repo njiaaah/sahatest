@@ -3,7 +3,7 @@
 ## Запуск:
 
 ```sh
-git clone https://github.com/njiaaah/sahavision sahavision
+git clone https://github.com/njiaaah/sahatest sahavision
 cd sahavision
 npm install
 npm run serve
