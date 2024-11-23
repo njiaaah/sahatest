@@ -3,7 +3,7 @@ import FolderModal from './components/FolderModal.vue'
 import ModalButton from './components/ModalButton.vue'
 import { ref } from 'vue'
 
-const isModalOpen = ref(true)
+const isModalOpen = ref(false)
 
 interface Folder {
   id: number

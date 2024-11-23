@@ -21,7 +21,11 @@ function closeModal() {
 }
 
 function getFolderId(id: number) {
-  selectedFolder.value = id
+  if (selectedFolder.value == id) {
+    selectedFolder.value = null
+  } else {
+    selectedFolder.value = id
+  }
 }
 
 function handleOk() {
@@ -36,10 +40,10 @@ function handleOk() {
     <!-- backdrop -->
     <div @click="closeModal" class="w-full h-full absolute bg-black opacity-25"></div>
     <!-- modal itself -->
-    <div class="bg-white z-10 w-10/12 mx-auto p-4 rounded-xl">
+    <div class="bg-white z-10 w-1/2 mx-auto p-4 rounded-xl flex flex-col">
       <h4 class="font-bold font-xl">{{ props.title || 'Title is missing' }}</h4>
       <!-- folders -->
-      <ul class="flex flex-col gap-2 my-10">
+      <ul class="flex flex-col gap-2 my-10 p-2 h-fit ml-4 max-h-[500px] overflow-y-auto">
         <FolderItem
           @get-folder-id="getFolderId"
           v-for="item in props.data || []"
@@ -50,7 +54,7 @@ function handleOk() {
         />
       </ul>
       <!-- button -->
-      <div class="flex justify-between">
+      <div class="flex justify-between h-fit">
         <ModalButton class="px-16" @click="handleOk" color="red" title="Ok" />
         <ModalButton class="px-16" @click="closeModal" color="gray" title="Close" />
       </div>

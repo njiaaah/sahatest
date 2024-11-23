@@ -26,7 +26,7 @@ function selectFolder() {
 <template>
   <div>
     <div
-      class="ring-1 ring-gray-200 bg-gray-50 rounded-xl w-fit flex gap-4 items-center cursor-pointer"
+      class="transition-all p-1 ring-1 ring-gray-200 bg-gray-50 rounded-xl w-fit flex gap-4 items-center cursor-pointer"
       :class="{ selected: props.isSelected }"
     >
       <!-- icon -->
@@ -36,7 +36,7 @@ function selectFolder() {
       <div
         v-else
         @click="isFolderOpen = !isFolderOpen"
-        class="p-2 hover:bg-gray-300 cursor-pointer rounded-full grid items-center"
+        class="p-1 hover:bg-sky-100 cursor-pointer rounded-full grid items-center"
       >
         <FolderMinus v-if="isFolderOpen" />
         <FolderPlus v-else />
@@ -66,7 +66,7 @@ function selectFolder() {
 
 <style scoped>
 .selected {
-  background-color: #ccc;
-  outline: 1px solid #ff1b1b;
+  background-color: #bde4ff;
+  outline: 1px solid #43c0ff;
 }
 </style>
